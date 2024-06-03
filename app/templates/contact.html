@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <div role="main" class="main">
+        <section class="section section-tertiary section-no-border pb-3 mt-0">
+            <div class="container">
+                <div class="row justify-content-end mt-4">
+                    <div class="col-lg-10 pt-4 mt-4 text-right">
+                        <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">Контакты</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div class="row pt-4 mb-4">
+                <div class="col-lg-7">
+
+                    <h2 class="mb-0">Остались вопросы?</h2>
+
+                    <p class="lead mb-4 mt-1">Оставьте Ваши данные и свяжемся с Вами, чтобы помочь!</p>
+
+                    <form id="contactForm" class="contact-form" action="php/contact-form.php" method="POST">
+                        <div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
+                            <strong>Успешно!</strong> Ваше сообщение отправлено нам.
+                        </div>
+
+                        <div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
+                            <strong>Ошибка!</strong> При отправке вашего сообщения произошла ошибка.
+                            <span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <input type="text" placeholder="Ваше имя" value="" data-msg-required="Пожалуйста введите ваше имя." maxlength="100" class="form-control" name="name" id="name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <input type="email" placeholder="Ваш E-mail" value="" data-msg-required="Пожалуйста введите адрес вашей электорнной почты." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <input type="text" placeholder="Тема" value="" data-msg-required="Пожалуйста укажите причину обращения." maxlength="100" class="form-control" name="subject" id="subject" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <textarea maxlength="5000" placeholder="Сообщение" data-msg-required="Напишите что-нибудь." rows="5" class="form-control" name="message" id="message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <input type="submit" value="Отправить сообщение" class="btn btn-lg btn-primary mb-4" data-loading-text="Загрузка...">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-lg-4 col-lg-offset-1">
+
+                    <h4 class="text-color-dark mb-1 pb-3">Мы на карте</h4>
+
+                    <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+                    <div id="map" class="google-map small"></div>
+
+                    <ul class="list list-icons mt-4 mb-4">
+                        <li><i class="icon-pin icons"></i> <strong>Адрес:</strong> </li>
+                        <li id="contactPhoneNumber"><i class="icon-call-end icons"></i> <strong>Телефон:</strong> +7 (999) 628 9023</li>
+                        <li id="contactMail"><i class="icon-envelope icons"></i> <strong>Электронная почта:</strong> <a href="mailto:viktoriagolova40732@gmail.com">viktoriagolova40732@gmail.com</a></li>
+                        <li><i class="icon-call-end icons"></i> <strong>Режим работы:</strong> <br>09:00–20:00<br>БЕЗ ВЫХОДНЫХ</p></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

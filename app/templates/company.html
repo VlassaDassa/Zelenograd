@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Company{% endblock %}
+
+{% block content %}
+    <div role="main" class="main">
+        <section class="section section-tertiary section-no-border pb-3 mt-0">
+            <div class="container">
+                <div class="row justify-content-end mt-4">
+                    <div class="col-lg-10 pt-4 mt-4 text-right">
+                        <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">О Нас</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div class="row pt-2">
+                <div class="col-lg-3">
+                    <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
+
+                        <ul class="nav nav-list flex-column mb-4 show-bg-active">
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#who-we-are">Кто мы</a></li>
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Наши партнеры</a></li>
+
+                        </ul>
+
+                    </aside>
+                </div>
+                <div class="col-lg-9">
+
+                    <section id="who-we-are" class="mb-4">
+                        <div class="nivo-slider mt-3 pb-4">
+                            <div class="slider-wrapper theme-default">
+                                <div id="nivoSlider" class="nivoSlider mt-0 mb-4">
+                                    <img src="{% static 'img/demos/construction/slides/slide-1.jpg' %}" data-thumb="img/demos/construction/slides/slide-1.jpg" alt="" />
+                                    <img src="{% static 'img/demos/construction/slides/1.jpeg' %}" data-thumb="img/demos/construction/slides/1.jpeg" alt="" />
+                                    <img src="{% static 'img/demos/construction/slides/2.jpeg' %}" data-thumb="img/demos/construction/slides/2.jpeg" alt="" />
+                                    <img src="{% static 'img/demos/construction/slides/3.jpeg' %}" data-thumb="img/demos/construction/slides/3.jpeg" alt="" />
+                                </div>
+                                <div id="htmlcaption" class="nivo-html-caption"></div>
+                            </div>
+                        </div>
+
+                        <h2 class="mb-0 text-color-dark">Кто мы?</h2>
+                        <p class="lead mb-4 mt-4">мы команда профессиональных строителей, дизайнеров, и инженеров, ведущих свою деятельность в области ремонта и реконструкции помещений, жилого и коммерческого назначения. Объединённых одной миссией: клиентоориентированность, открытость и честность в исполнении своих задач и обязанностей перед каждым заказчиком.</p>
+
+                        <p></p>
+                    </section>
+
+                    <hr class="solid my-5">
+
+        
+
+                    <section id="partners" class="mb-4">
+                        <h2 class="mb-0 text-color-dark">Наши партнеры</h2>
+
+                        <div class="row mt-4">
+                            <div class="content-grid content-grid-dashed col mt-4 mb-4">
+                                <div class="row content-grid-row">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-1.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-2.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-3.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row content-grid-row">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-4.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-5.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="{% static 'img/logos/logo-light-6.png' %}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

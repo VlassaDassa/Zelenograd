@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		{% load static %}
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+
+		<title>{% block title %}Index{% endblock %}</title>	
+
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}' %}" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/animate/animate.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/simple-line-icons/css/simple-line-icons.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
+		<link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
+
+		<!-- Текущей страницы CSS -->
+		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/settings.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/layers.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/navigation.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/nivo-slider/nivo-slider.css' %}">
+		<link rel="stylesheet" href="{% static 'vendor/nivo-slider/themes/default/default.css' %}">
+		
+		<!-- Demo CSS -->
+		<link rel="stylesheet" href="{% static 'css/demos/index.css' %}">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{% static 'css/skins/skin-construction.css' %}"> 
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+		<!-- Head Libs -->
+		<script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+
+	</head>
+	<body data-spy="scroll" data-target="#sidebar" data-offset="120">
+
+		<div class="body">
+			<header id="header" class="header-narrow header-semi-transparent-light" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+				<div class="header-body">
+					<div class="header-container container">
+						<div class="header-row">
+							<div class="header-column">
+								<div class="header-row">
+									<div class="header-logo">
+										<img class="logo-default" alt="Porto" width="324" height="212" src="{% static 'img/demos/construction/logo-construction.png' %}">
+										<a href="{% url 'index' %}">
+											<img class="logo-small" alt="Porto" width="131" height="48" src="{% static 'img/demos/construction/logo-construction-small.png' %}">
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="header-column justify-content-end">
+								<div class="header-row">
+									<div class="header-nav header-nav-stripe order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-square header-nav-main-effect-1 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li>
+														<a class="nav-link active" href={% url 'index' %}>
+															Главная
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="{% url 'company' %}">
+															О Нас
+														</a>
+													</li>
+													<li class="dropdown">
+														<a class="nav-link dropdown-toggle" href="{% url 'services' %}">
+															Услуги
+														</a>
+														<ul id='servicesMenu' class="dropdown-menu">
+															
+														</ul>
+													</li>
+													<li>
+														<a class="nav-link" href="{% url 'projects' %}">
+															Цены
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="{% url 'blog' %}">
+															Наши работы
+														</a>
+													</li>
+													<li>
+														<a class="nav-link" href="{% url 'contact' %}">
+															Контакты
+														</a>
+													</li>
+												</ul>
+												<p>Работаем: 09:00–20:00<br>БЕЗ ВЫХОДНЫХ<br>+7 999 628 9023</p>
+											</nav>
+										</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+            {% block content %}
+
+            {% endblock %}
+
+			<footer id="footer">
+				<div class="container">
+					<div class="row pt-4 pb-5 text-center text-md-left">
+						<div class="col-md-3">
+							<a href="{% url 'index' %}">
+								<img alt="Porto" class="img-fluid logo" width="110" src="{% static 'img/demos/construction/logo-construction-small.png' %}">
+							</a>
+						</div>
+						<div class="col-md-4">
+							<div class="row">
+								<div class="col-lg-6 mb-2">
+									<h4>Ремонт квартир Зеленорад</h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6 mb-0">
+									<ul class="list list-footer-nav">
+										<li>
+											<a href="{% url 'index' %}">
+												Главная
+											</a>
+										</li>
+										<li>
+											<a href="{% url 'company' %}">
+												О Нас
+											</a>
+										</li>
+										<li>
+											<a href="{% url 'services' %}">
+												Услуги
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="col-6">
+									<ul class="list list-footer-nav">
+										<li>
+											<a href="{% url 'projects' %}">
+												Цены
+											</a>
+										</li>
+										<li>
+											<a href="{% url 'blog' %}">
+												Наши работы
+											</a>
+										</li>
+										<li>
+											<a href="{% url 'contact' %}">
+												Контакты
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<h4>Запишись на бесплатный замер!</h4>
+
+							<div class="newsletter">
+
+								<div class="alert alert-success d-none" id="newsletterSuccess">
+									<strong></strong> Вы были добавлены в наш список адресов электронной почты.
+								</div>
+
+								<div class="alert alert-danger d-none" id="newsletterError"></div>
+
+								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+									<div class="input-group">
+										<input class="form-control form-control-sm" placeholder="Ваш Email" name="newsletterEmail" id="newsletterEmail" type="text">
+										<span class="input-group-append">
+											<button class="btn btn-light" type="submit"><i class="icon-paper-plane icons"></i></button>
+										</span>
+									</div>
+								</form>
+
+							</div>
+
+							<p id="footerContact" ><i class="fas fa-phone"></i> +7 999 628 9023 <i class="far fa-envelope ml-2"></i> <a href="viktoriagolova40732@gmail.com">viktoriagolova40732@gmail.com</a></p>
+
+						</div>
+					</div>
+
+					<div class="footer-copyright">
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<p>© ИП Иванов 2024. </p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Vendor -->
+		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.appear/jquery.appear.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.cookie/jquery.cookie.min.js' %}"></script>
+		<script src="{% static 'vendor/popper/umd/popper.min.js' %}"></script>
+		<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'vendor/common/common.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.validation/jquery.validate.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.gmap/jquery.gmap.min.js' %}"></script>
+		<script src="{% static 'vendor/jquery.lazyload/jquery.lazyload.min.js' %}"></script>
+		<script src="{% static 'vendor/isotope/jquery.isotope.min.js' %}"></script>
+		<script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'vendor/vide/jquery.vide.min.js' %}"></script>
+		<script src="{% static 'vendor/vivus/vivus.min.js' %}"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="{% static 'js/theme.js' %}"></script>
+		
+		<!-- Current Page Vendor and Views -->
+		<script src="{% static 'vendor/rs-plugin/js/jquery.themepunch.tools.min.js' %}"></script>
+		<script src="{% static 'vendor/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+		<!-- Current Page Vendor and Views -->
+		<script src="{% static 'vendor/nivo-slider/jquery.nivo.slider.min.js' %}"></script>
+		<script src="{% static 'js/views/view.contact.js' %}"></script>
+
+		<!-- Demo -->
+		<script src="{% static 'js/demos/demo-construction.js' %}"></script>	
+		
+		<!-- Theme Custom -->
+		<script src="{% static 'js/custom.js' %}"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="{% static 'js/theme.init.js' %}"></script>
+
+
+
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+		</script>
+
+		<script type="text/javascript">
+			// Функция ymaps.ready() будет вызвана, когда
+			// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+			ymaps.ready(init);
+			function init(){
+				// Создание карты.
+				var myMap = new ymaps.Map("map", {
+					// Координаты центра карты.
+					// Порядок по умолчанию: «широта, долгота».
+					// Чтобы не определять координаты центра карты вручную,
+					// воспользуйтесь инструментом Определение координат.
+					center: [55.76, 37.64],
+					// Уровень масштабирования. Допустимые значения:
+					// от 0 (весь мир) до 19.
+					zoom: 15
+				});
+			}
+		</script>
+
+	</body>
+</html>

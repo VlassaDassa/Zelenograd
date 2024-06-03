@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Services detail 1{% endblock %}
+
+{% block content %}
+    <div role="main" class="main">
+        <section class="section section-tertiary section-no-border pb-3 mt-0">
+            <div class="container">
+                <div class="row justify-content-end mt-4">
+                    <div class="col-lg-10 pt-4 mt-4 text-right">
+                        <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">Услуги</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="container">
+
+            <div class="row pt-2 mb-4">
+                <div class="col-lg-3">
+                    <aside class="sidebar">
+
+                        <ul id='navItems' class="nav nav-list flex-column mb-4 show-bg-active">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Услуги</a></li>
+                        </ul>
+                    </aside>
+
+                </div>
+                <div class="col-lg-9">
+                    <h2 class="mb-2">{{ data.name }}</h2>
+
+                    <img class="img-fluid float-right ml-5 mb-4 mt-4" src="{{ data.icon.url }}" alt="" />
+
+                    <p class="lead mb-4 mt-4">{{ data.first_paragraph }}</p>
+
+                    <p>{{ data.second_paragraph }}</p>
+
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <p class="pb-4">{{ data.third_paragraph }}</p>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="nivo-slider pb-4 mb-4">
+                                <div class="slider-wrapper theme-default">
+                                    <div id="nivoSlider" class="nivoSlider mt-0 mb-4">
+                                        <img src="{{ data.photo.url }}" data-thumb="" alt="" />
+                                    </div>
+                                    <div id="htmlcaption" class="nivo-html-caption"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>{{ data.fourth_paragraph }}</p>
+
+                    <h4 class="mt-4 mb-3">В замеры входит:</h4>
+
+                    <ul class="list list-icons list-primary mt-4 mb-4">
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><i class="fas fa-check"></i> общий размер пространства всей квартиры;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><i class="fas fa-check"></i> высота потолков;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="600"><i class="fas fa-check"></i> высота и ширина всех окон, их высота от пола до подоконника и от потолка до начала окна;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900"><i class="fas fa-check"></i> высота и ширина всех дверей и их высота от потолка;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900"><i class="fas fa-check"></i> толщина наружных, внутренних стен и всех перегородок;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900"><i class="fas fa-check"></i> толщина перекрытия потолка и пола;</li>
+                        <li class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="900"><i class="fas fa-check"></i> замеры расстояния розеток к местам, где будет стоять техника.
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
