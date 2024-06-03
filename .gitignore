@@ -22,8 +22,6 @@ local_settings.py
 
 # Django Static Files
 staticfiles/
-static/
-media/
 
 # Django Secret Key
 secret_key.txt
