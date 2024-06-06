@@ -1,0 +1,13 @@
+/* Add here all your CSS customizations */
+
+
+ul.comments li .img-thumbnail{
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+}
+
+ul.comments li img.avatar {
+    width: 100%;
+    height: 100%;
+}

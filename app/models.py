@@ -1,4 +1,17 @@
 from django.db import models
+import os
+from django.utils.deconstruct import deconstructible
+from django.utils.crypto import get_random_string
+
+@deconstructible
+class PathGenerator:
+    def __init__(self, sub_path):
+        self.sub_path = sub_path
+
+    def __call__(self, instance, filename):
+        ext = os.path.splitext(filename)[1]
+        filename = get_random_string(length=10) + ext
+        return os.path.join(self.sub_path, filename)
 
 
 class PriceList(models.Model):
@@ -16,8 +29,8 @@ class Service(models.Model):
     second_paragraph = models.TextField(max_length=300, verbose_name='Второй абзац')
     third_paragraph = models.TextField(max_length=300, verbose_name='Третий абзац')
     fourth_paragraph = models.TextField(max_length=300, verbose_name='Четвёртый абзац')
-    icon = models.ImageField(upload_to='images', verbose_name='Иконка')
-    photo = models.ImageField(upload_to='images', verbose_name='photo')
+    icon = models.ImageField(upload_to=PathGenerator('images/'), verbose_name='Иконка')
+    photo = models.ImageField(upload_to=PathGenerator('images/'), verbose_name='photo')
 
     def __str__(self):
         return self.name
@@ -25,7 +38,7 @@ class Service(models.Model):
 
 class Author(models.Model):
     fullname = models.CharField(max_length=200, verbose_name='ФИО')
-    photo = models.ImageField(upload_to='images', default='images/default_photo.jpg', verbose_name='Фотография', null=True, blank=True)
+    photo = models.ImageField(upload_to=PathGenerator('images/'), default='images/default_photo.jpg', verbose_name='Фотография', null=True, blank=True)
     description = models.TextField(max_length=300, verbose_name='Описание', null=True, blank=True)
     
     def __str__(self):
@@ -40,7 +53,7 @@ class Works(models.Model):
     second_paragraph = models.TextField(verbose_name='Второй параграф')
     third_paragraph = models.TextField(verbose_name='Третий параграф')
     fourth_paragraph = models.TextField(verbose_name='Четвёртый параграф')
-    photo = models.ImageField(upload_to='images', verbose_name='Фотография')
+    photo = models.ImageField(upload_to=PathGenerator('images/'), verbose_name='Фотография')
     category = models.CharField(max_length=200, verbose_name='Категория')
     day = models.CharField(max_length=15, verbose_name='День')
     mounth = models.CharField(max_length=15, verbose_name='Месяц')
@@ -61,7 +74,7 @@ class Comments(models.Model):
 
 
 class Gallery(models.Model):
-    image = models.ImageField(upload_to='images/', verbose_name='Фотография')
+    image = models.ImageField(upload_to=PathGenerator('images/'), verbose_name='Фотография')
 
 
 class Mail(models.Model):
