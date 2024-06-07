@@ -11,3 +11,148 @@ ul.comments li img.avatar {
     width: 100%;
     height: 100%;
 }
+
+
+.tableCount,
+.tableRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tableRow + .tableRow {
+    margin-top: 10px;
+}
+
+.tableRow {
+    column-gap: 50px;
+}
+
+.tableCount {
+    column-gap: 10px;
+}
+
+.calculator {
+    padding: 0px;
+    margin-top: 50px;
+}
+
+
+.calcTitle {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #777777;
+}
+
+.tableName {
+    width: 500px;
+}
+
+.tableCount {
+    width: 100px;
+}
+
+.tableCountValue {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.tablePrice {
+    text-align: center;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table_header {
+    font-weight: 700;
+}
+
+.incIco {
+    cursor: pointer;
+
+    transition: all ease-in-out 0.3s;
+}
+
+.incIco:hover {
+    opacity: 0.7;
+}
+
+.deleteIcon {
+    height: 25px;
+    cursor: pointer;
+
+    transition: all ease-in-out 0.3s;
+}
+
+.deleteIcon:hover {
+    opacity: 0.6;
+}
+
+.addRowIcon {
+    height: 30px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.addRowIcon:hover {
+    opacity: 0.6;
+}
+
+
+.choiceMenuItem {
+    display: flex;
+    column-gap: 20px;
+    padding: 5px 10px;
+
+
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all ease-in-out 0.1s;
+}
+
+.choiceMenuItem:hover {
+    background: #e6e6e6;
+}
+
+.choiceMenuItemPrice {
+    color: #E04622;
+}
+
+
+.choiceMenu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    padding: 10px;
+    background: #ffffff;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    z-index: 3;
+}
+
+
+.sumContainer {
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.totalPrice,
+.totalCount {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+
+.totalPriceLabel,
+.totalCountLabel {
+    color: #E04622;
+    font-weight: 600;
+}
+

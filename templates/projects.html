@@ -27,6 +27,57 @@
         <tbody></tbody>
     </table>
 
+
+
+    <section class="calculator container">
+        <h2 class="calcTitle">
+            Калькулятор
+        </h2>
+        
+        <div class="calcTableBody">
+            <div id="table_header" class="tableRow">
+                <div class="tableName">
+                    Название
+                </div>
+        
+                <div class="tableCount">
+                    Кол-во (шт)
+                </div>
+        
+                <div class="tablePrice">
+                    Цена (руб)
+                </div>
+            </div>
+
+            <div class="tableRow">
+                <img class="addRowIcon" src="{% static 'images/plus.svg' %}">
+                    
+                <div class="choiceMenu">
+                     
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sumContainer">
+            <div class="totalPrice">
+                <p class="totalPriceLabel">Цена всего</p>
+                <p class="totalPriceValue">0 рублей</p>
+            </div>
+
+            <div class="totalCount">
+                <p class="totalCountLabel">Количество</p>
+                <p class="totalCountValue">0 услуг</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <div id="staticUrls" 
+     data-plus="{% static 'images/plus.svg' %}" 
+     data-minus="{% static 'images/minus.svg' %}" 
+     data-trash="{% static 'images/trash.svg' %}"></div>
+
     <br>
     <br>
     <br>

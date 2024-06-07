@@ -5,13 +5,26 @@ $.ajax({
     success: function(response) {
         const data = response.data
         $('#price-list tbody').empty();
+        $('.choiceMenu').empty()
 
         $.each(data, function(index, item) {
             var row = $('<tr>').appendTo('#price-list tbody');
             $('<td>').text(item.name).appendTo(row);
             $('<td>').text(item.unit).appendTo(row);
             $('<td>').text(item.price).appendTo(row);
+
+            $('.choiceMenu').append(
+                $('<div>').attr({
+                    'class': 'choiceMenuItem'
+                }).append(
+                    $('<div>').attr({'class': 'choiceMenuItemName'}).text(item.name),
+                    $('<div>').attr({'class': 'choiceMenuItemPrice'}).text(item.price),
+                )
+            )
         });
+
+        
+  
     },
 
     error: function(xhr, status, error) {
@@ -99,7 +112,6 @@ $('#SendCommentBlog').on('click', function(e) {
 
 
 // Вывод контактов
-// Вывод услуг в меню
 $.ajax({
     type: 'GET',
     url: '/get_contacts',
@@ -133,4 +145,86 @@ $.ajax({
 
 
 
+// Увеличение счётчика
+$(document).on('click', '.incIco', function(e) {
+    const increment = $(this).hasClass('incIco--inc')
+    let value_container = $(this).closest('.tableCount').find('.tableCountValue')
+    let value = value_container.text()
+    if (increment) {
+        value_container.text(parseInt(value) + 1)
+        const cur_price = parseInt($(this).closest('.tableRow').attr('data-id'))
+        $(this).closest('.tableRow').find('.tablePrice').text(cur_price * (parseInt(value) + 1))
 
+        calculating()
+        return
+    }
+
+    if (parseInt(value) == 0) {
+        calculating()
+        return
+    }
+
+    const cur_price = parseInt($(this).closest('.tableRow').attr('data-id'))
+    $(this).closest('.tableRow').find('.tablePrice').text(cur_price * (parseInt(value) - 1))
+    value_container.text(parseInt(value) - 1)
+
+    calculating()
+})
+
+// Удаление записи
+$(document).on('click', '.deleteIcon', function(e) {
+    $(this).closest('.tableRow').remove()
+
+    calculating()
+})
+
+// Отрытие меню с услугами
+$(document).on('click', '.addRowIcon', function(e) {
+    $('.choiceMenu').toggle()
+})
+
+
+// Выбор элемента
+$(document).on('click', '.choiceMenuItem', function(e) {
+    const service_name = $(this).find('.choiceMenuItemName').text()
+    const service_price = parseInt($(this).find('.choiceMenuItemPrice').text())
+    const parent = $('.calcTableBody')
+
+    var plusIconUrl = $('#staticUrls').data('plus');
+    var minusIconUrl = $('#staticUrls').data('minus');
+    var trashIconUrl = $('#staticUrls').data('trash');
+
+    var tableRow = $('<div>').addClass('tableRow').attr({'data-id': service_price});
+    var tableName = $('<div>').addClass('tableName').text(service_name);
+    var tableCount = $('<div>').addClass('tableCount');
+    var incIcon = $('<img>').addClass('incIco incIco--inc').attr('src', plusIconUrl).attr('alt', 'Плюс');
+    var countValue = $('<p>').addClass('tableCountValue').text('1');
+    var decIcon = $('<img>').addClass('incIco incIco--dec').attr('src', minusIconUrl).attr('alt', 'Минус');
+    tableCount.append(incIcon, countValue, decIcon);
+    var tablePrice = $('<div>').addClass('tablePrice').text(service_price);
+    var deleteIcon = $('<img>').addClass('deleteIcon').attr('src', trashIconUrl);
+    tableRow.append(tableName, tableCount, tablePrice, deleteIcon);
+    parent.children().eq(-2).after(tableRow);
+
+    $('.choiceMenu').toggle()
+
+    calculating()
+})
+
+
+// Подсчёт
+function calculating() {
+    var sum = 0
+    $('.tablePrice').slice(1).each(function() {
+        sum += parseInt($(this).text())
+    });
+
+    var sumCount = 0
+    $('.tableCountValue').each(function() {
+        sumCount += parseInt($(this).text())
+    });
+
+
+    $('.totalPriceValue').text(`${sum} рублей`)
+    $('.totalCountValue').text(`${sumCount} услуг`)
+}
