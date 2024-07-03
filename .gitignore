@@ -3,7 +3,6 @@
 *.pot
 *.pyc
 __pycache__/
-db.sqlite3
 .env
 *.py[cod]
 *$py.class
@@ -15,13 +14,6 @@ db.sqlite3
 .project
 .pydevproject
 local_settings.py
-
-# Django Migrations
-**/migrations/*
-!**/migrations/__init__.py
-
-# Django Static Files
-staticfiles/
 
 # Django Secret Key
 secret_key.txt
